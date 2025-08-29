@@ -86,6 +86,11 @@ h1 {
     font-size: 1.5rem;
     outline: none;
     border: 1px solid var(--Neutral-600);
+
+    &.active-btn {
+        background-color: var(--Red-500);
+        color: var(--Neutral-900);
+    }
 }
 
 section {
@@ -196,7 +201,7 @@ input:checked+.slider:before {
     body {
         padding: 2em;
     }
-    
+
     main {
         width: 1000px;
     }
@@ -206,9 +211,23 @@ input:checked+.slider:before {
         justify-content: space-between;
     }
 
+    .mode-btn {
+        &:hover {
+            background-color: var(--Neutral-600);
+            cursor: pointer;
+        }
+    }
+
     .filters {
         width: auto;
         gap: 1em;
+    }
+
+    .filters button:not(.active-btn) {
+        &:hover {
+            background-color: var(--Neutral-600);
+            cursor: pointer;
+        }
     }
 
     section {
@@ -216,5 +235,13 @@ input:checked+.slider:before {
         grid-template-rows: auto;
         grid-column-gap: 10px;
         grid-row-gap: 10px;
+    }
+
+    .remove-btn {
+        &:hover {
+            cursor: pointer;
+            background-color: var(--Red-500);
+            color: var(--Neutral-900);
+        }
     }
 }
