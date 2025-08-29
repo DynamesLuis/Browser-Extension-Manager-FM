@@ -33,12 +33,14 @@ p {
 
 body {
     background-image: var(--Dark-Gradient);
-    padding: .5em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main header {
     background-color: var(--Neutral-800);
-    color: var();
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -188,4 +190,31 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+@media (min-width: 800px) {
+    body {
+        padding: 2em;
+    }
+    
+    main {
+        width: 1000px;
+    }
+
+    .title-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .filters {
+        width: auto;
+        gap: 1em;
+    }
+
+    section {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
 }
