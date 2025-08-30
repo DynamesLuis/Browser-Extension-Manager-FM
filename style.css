@@ -25,10 +25,16 @@
     box-sizing: border-box;
     color: white;
     font-family: 'Karla';
+    transition: background 0.3s ease,
+                color 0.3s ease,
 }
 
 p {
     font-size: 16px;
+}
+
+button:focus {
+    outline: 2px solid var(--Red-500);
 }
 
 body {
@@ -84,7 +90,6 @@ h1 {
     padding: .4em .8em;
     border-radius: 30px;
     font-size: 1.5rem;
-    outline: none;
     border: 1px solid var(--Neutral-600);
 
     &.active-btn {
@@ -104,6 +109,9 @@ section article {
     background-color: var(--Neutral-800);
     border-radius: 10px;
     border: 1px solid var(--Neutral-700);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .extension-info {
@@ -116,7 +124,7 @@ section article {
 
 .texts p {
     margin-top: .5em;
-    color: var(--Neutral-100);
+    color: var(--Neutral-200);
 }
 
 .extension-options {
@@ -157,6 +165,7 @@ section article {
     left: 0;
     right: 0;
     bottom: 0;
+    border: 2px solid #ccc;
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
@@ -168,7 +177,7 @@ section article {
     height: 16px;
     width: 16px;
     left: 4px;
-    bottom: 4px;
+    bottom: 2px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -179,7 +188,7 @@ input:checked+.slider {
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px var(--Red-400);
+    border: 2px solid var(--Red-500);
 }
 
 input:checked+.slider:before {
