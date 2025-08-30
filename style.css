@@ -17,6 +17,7 @@
     --Red-700: hsl(3, 77%, 44%);
     --Light-Gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
     --Dark-Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+    --Background: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
 
 * {
@@ -26,7 +27,7 @@
     color: white;
     font-family: 'Karla';
     transition: background 0.3s ease,
-                color 0.3s ease,
+        color 0.3s ease,
 }
 
 p {
@@ -38,11 +39,15 @@ button:focus {
 }
 
 body {
-    background-image: var(--Dark-Gradient);
+    background-image: var(--Background);
     padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+body.light {
+    --Background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
 }
 
 main header {
@@ -56,14 +61,16 @@ main header {
 
 .mode-btn {
     background-color: var(--Neutral-700);
-    padding: .7em .9em;
+    padding: 2em;
     border-radius: 10px;
     outline: none;
     border: none;
-    flex: flex;
-    /*verificar si esto funciona*/
-    align-items: center;
-    justify-content: center;
+    background-image: url("./assets/images/icon-sun.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    &.light {
+        background-image: url("./assets/images/icon-moon.svg");
+    }
 }
 
 .title-container {
