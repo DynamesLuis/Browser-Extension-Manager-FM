@@ -15,16 +15,28 @@
     --Red-400: hsl(3, 86%, 64%);
     --Red-500: hsl(3, 71%, 56%);
     --Red-700: hsl(3, 77%, 44%);
-    --Light-Gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
-    --Dark-Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
     --Background: linear-gradient(180deg, #040918 0%, #091540 100%);
+    --Article-background: hsl(226, 25%, 17%);
+    /*800*/
+    --Article-border: hsl(225, 23%, 24%);
+    /*700-300*/
+    --titles-color: hsl(200, 60%, 99%);
+    /*0-900*/
+    --p-color: hsl(217, 61%, 90%);
+    --btn-border: hsl(226, 11%, 37%);
+    --btn-filter-bg: hsl(225, 23%, 24%);
+    --btn-filter-border: hsl(226, 11%, 37%);
+    --mode-btn-bg: hsl(225, 23%, 24%);
+    --active-red: hsl(3, 71%, 56%);
+    --active-color: hsl(227, 75%, 14%);
+    --filters-bg: hsl(226, 11%, 37%);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    color: var(--titles-color);
     font-family: 'Karla';
     transition: background 0.3s ease,
         color 0.3s ease,
@@ -48,10 +60,20 @@ body {
 
 body.light {
     --Background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --Article-background: hsl(200, 60%, 99%);
+    --Article-border: hsl(0, 0%, 78%);
+    --titles-color: hsl(227, 75%, 14%);
+    --p-color: hsl(226, 11%, 37%);
+    --btn-filter-bg: hsl(200, 60%, 99%);
+    --btn-filter-border: hsl(0, 0%, 78%);
+    --mode-btn-bg: hsl(217, 61%, 90%);
+    --active-red:hsl(3, 77%, 44%);
+    --active-color: hsl(0, 0%, 93%);
+    --filters-bg: hsl(0, 0%, 93%);
 }
 
 main header {
-    background-color: var(--Neutral-800);
+    background-color: var(--Article-background);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -60,7 +82,7 @@ main header {
 }
 
 .mode-btn {
-    background-color: var(--Neutral-700);
+    background-color: var(--mode-btn-bg);
     padding: 2em;
     border-radius: 10px;
     outline: none;
@@ -68,6 +90,7 @@ main header {
     background-image: url("./assets/images/icon-sun.svg");
     background-repeat: no-repeat;
     background-position: center;
+
     &.light {
         background-image: url("./assets/images/icon-moon.svg");
     }
@@ -93,15 +116,15 @@ h1 {
 }
 
 .title-container button {
-    background-color: var(--Neutral-700);
+    background-color: var(--btn-filter-bg);
     padding: .4em .8em;
     border-radius: 30px;
     font-size: 1.5rem;
-    border: 1px solid var(--Neutral-600);
+    border: 1px solid var(--btn-filter-border);
 
     &.active-btn {
-        background-color: var(--Red-500);
-        color: var(--Neutral-900);
+        background-color: var(--active-red);
+        color: var(--active-color);
     }
 }
 
@@ -113,9 +136,9 @@ section {
 
 section article {
     padding: 1em;
-    background-color: var(--Neutral-800);
+    background-color: var(--Article-background);
     border-radius: 10px;
-    border: 1px solid var(--Neutral-700);
+    border: 1px solid var(--Article-border);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -131,7 +154,7 @@ section article {
 
 .texts p {
     margin-top: .5em;
-    color: var(--Neutral-200);
+    color: var(--p-color);
 }
 
 .extension-options {
@@ -142,8 +165,8 @@ section article {
 }
 
 .remove-btn {
-    background-color: var(--Neutral-800);
-    border: 1px solid var(--Neutral-600);
+    background-color: var(--Article-background);
+    border: 1px solid var(--btn-border);
     font-size: 1rem;
     border-radius: 20px;
     padding: .6em;
@@ -229,7 +252,7 @@ input:checked+.slider:before {
 
     .mode-btn {
         &:hover {
-            background-color: var(--Neutral-600);
+            background-color: var(--btn-filter-border);
             cursor: pointer;
         }
     }
@@ -241,7 +264,7 @@ input:checked+.slider:before {
 
     .filters button:not(.active-btn) {
         &:hover {
-            background-color: var(--Neutral-600);
+            background-color: var(--filters-bg);
             cursor: pointer;
         }
     }
@@ -256,8 +279,8 @@ input:checked+.slider:before {
     .remove-btn {
         &:hover {
             cursor: pointer;
-            background-color: var(--Red-500);
-            color: var(--Neutral-900);
+            background-color: var(--active-red);
+            color: var(--active-color);
         }
     }
 }
