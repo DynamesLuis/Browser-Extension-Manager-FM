@@ -50,6 +50,11 @@ button:focus {
     outline: 2px solid var(--Red-500);
 }
 
+html, 
+body {
+    min-height: 100%;
+}
+
 body {
     background-image: var(--Background);
     padding: 1em;
@@ -142,6 +147,15 @@ section article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+section article .extension-info {
+    display: flex;
+    align-items: start;
+}
+
+section article .texts h2{
+    line-height: 1;
 }
 
 section article.hidden {
