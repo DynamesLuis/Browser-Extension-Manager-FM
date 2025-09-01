@@ -144,6 +144,10 @@ section article {
     justify-content: space-between;
 }
 
+section article.hidden {
+    display: none;
+}
+
 .extension-info {
     display: flex;
 }

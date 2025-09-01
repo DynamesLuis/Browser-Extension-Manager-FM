@@ -31,18 +31,30 @@ function changeTheme() {
 }
 
 function showAll() {
-   console.log("showing all");
-   
+   const $articles = document.querySelectorAll("article");
+   $articles.forEach(extension => {
+      resetHidden(extension);
+   });
 }
 
 function showActive() {
-   console.log("showing active");
-
+   const $articles = document.querySelectorAll("article");
+   $articles.forEach(extension => {
+      resetHidden(extension);
+      if (!extension.querySelector(".input-toggle").checked) {
+         extension.classList.add("hidden");
+      }
+   });
 }
 
 function showInactive() {
-   console.log("showing inactive");
-
+   const $articles = document.querySelectorAll("article");
+   $articles.forEach(extension => {
+      resetHidden(extension);
+      if (extension.querySelector(".input-toggle").checked) {
+         extension.classList.add("hidden");
+      }
+   });
 }
 
 function setActive(btn, filtersBtn) {
@@ -50,4 +62,8 @@ function setActive(btn, filtersBtn) {
       filtersBtn.forEach(btn => btn.classList.remove("active-btn"));
       btn.classList.add("active-btn")
    }
+}
+
+function resetHidden(element) {
+   element.classList.remove("hidden");
 }
