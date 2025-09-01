@@ -16,7 +16,11 @@ function initEvents() {
    $filtersBtn.forEach(btn => {
       btn.addEventListener('click', () => setActive(btn, $filtersBtn));
    });
-
+   const $articles = document.querySelectorAll("article");
+   $articles.forEach(extension => {
+      const $removeBtn = extension.querySelector(".remove-btn");
+      $removeBtn.addEventListener('click', () => deleteExtension(extension));
+   })
 }
 
 function changeTheme() {
@@ -66,4 +70,8 @@ function setActive(btn, filtersBtn) {
 
 function resetHidden(element) {
    element.classList.remove("hidden");
+}
+
+function deleteExtension(extension) {
+   extension.remove();
 }
